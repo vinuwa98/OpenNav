@@ -18,7 +18,7 @@ function App(): JSX.Element {
           paddingHorizontal: 30,
         }}
       >
-        <Text style={{ color: 'white', fontSize: 18 }}>Let's Get Started</Text>
+        <Text style={{ color: 'black', fontSize: 22 , fontWeight: 'bold' }}>Let's Get Started</Text>
       </TouchableOpacity>
     </ImageBackground>
   );
