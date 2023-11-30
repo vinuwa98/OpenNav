@@ -17,16 +17,19 @@ function BackgroundButton({ onPress, title }: BackgroundButtonProps): JSX.Elemen
     <TouchableOpacity
       onPress={onPress} // Event handler passed from parent component
       style={{
-        alignItems: 'center', // Center aligns content horizontally
+        alignItems: 'flex-end', // Align content to the right
         justifyContent: 'center', // Center aligns content vertically
         backgroundColor: '#FA7E52', // Background color of the button
         borderRadius: 100, // Border radius for rounded corners
         paddingVertical: 15, // Vertical padding within the button
         paddingHorizontal: 30, // Horizontal padding within the button
+        marginRight: 20, // Add margin to the right
+        marginTop: 650 // Add margin to the top
+
       }}
     >
       {/* Text component for displaying the title with specified styles */}
-      <Text style={{ color: 'black', fontSize: 22, fontWeight: 'bold' }}>{title}</Text>
+      <Text style={{ color: 'black', fontSize: 22, fontWeight: '900' }}>{title}</Text>
     </TouchableOpacity>
   );
 }
