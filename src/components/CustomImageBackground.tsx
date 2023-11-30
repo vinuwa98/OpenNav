@@ -1,28 +1,50 @@
 // src/components/CustomImageBackground.tsx
 
-// Import necessary React components from 'react-native'
 import React, { ReactNode } from 'react';
-import { ImageBackground, View, ImageSourcePropType } from 'react-native';
+import { ImageBackground, View, ImageSourcePropType, StyleSheet } from 'react-native';
+import UndrawImage from './UndrawImage';
+import BackgroundButton from './BackgroundButton';
 
-// Define the props interface for the CustomImageBackground component
 interface CustomImageBackgroundProps {
-  source: ImageSourcePropType; // Image source for the background
-  children?: ReactNode; // Child components to be rendered within the background
+  source: ImageSourcePropType;
+  undrawImage: any;
+  children?: ReactNode;
 }
 
-// CustomImageBackground component function
-function CustomImageBackground({ source, children }: CustomImageBackgroundProps): JSX.Element {
+function CustomImageBackground({ source, undrawImage, children }: CustomImageBackgroundProps): JSX.Element {
   return (
-    // ImageBackground provides a background image for its children
     <ImageBackground
-      source={source} // Image source passed as a prop
-      style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} // Styles for the ImageBackground component
+      source={source}
+      style={styles.background}
     >
-      {/* View component for centering its children */}
-      <View style={{ alignItems: 'center', justifyContent: 'center' }}>{children}</View>
+      <View style={styles.container}>
+        <UndrawImage image={undrawImage} style={styles.image} />
+        <BackgroundButton onPress={() => console.log("Let's get started!")} title="Let's Get Started" style={styles.button} />
+      </View>
     </ImageBackground>
   );
 }
 
-// Export the CustomImageBackground component as the default export
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image: {
+    width: 350,
+    height: 400,
+    marginBottom: 10,
+    marginTop: 90
+  },
+  button: {
+    marginTop: 70,
+    // Add any additional styling for the button here
+  },
+});
+
 export default CustomImageBackground;

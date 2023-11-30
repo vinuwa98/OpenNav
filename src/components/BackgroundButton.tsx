@@ -1,38 +1,31 @@
 // src/components/BackgroundButton.tsx
 
-// Import necessary React components from 'react-native'
 import React from 'react';
-import { TouchableOpacity, Text, GestureResponderEvent } from 'react-native';
+import { TouchableOpacity, Text, GestureResponderEvent, ViewStyle } from 'react-native';
 
-// Define the props interface for the BackgroundButton component
 interface BackgroundButtonProps {
-  onPress: (event: GestureResponderEvent) => void; // Function to be executed on button press
-  title: string; // Text to be displayed on the button
+  onPress: (event: GestureResponderEvent) => void;
+  title: string;
+  style?: ViewStyle; // Use ViewStyle for styling the button container
 }
 
-// BackgroundButton component function
-function BackgroundButton({ onPress, title }: BackgroundButtonProps): JSX.Element {
+function BackgroundButton({ onPress, title, style }: BackgroundButtonProps): JSX.Element {
   return (
-    // TouchableOpacity provides a touchable area, and onPress is triggered on touch
     <TouchableOpacity
-      onPress={onPress} // Event handler passed from parent component
+      onPress={onPress}
       style={{
-        alignItems: 'flex-end', // Align content to the right
-        justifyContent: 'center', // Center aligns content vertically
-        backgroundColor: '#FA7E52', // Background color of the button
-        borderRadius: 100, // Border radius for rounded corners
-        paddingVertical: 15, // Vertical padding within the button
-        paddingHorizontal: 30, // Horizontal padding within the button
-        marginRight: 20, // Add margin to the right
-        marginTop: 650 // Add margin to the top
-
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#FA7E52',
+        borderRadius: 100,
+        paddingVertical: 15,
+        paddingHorizontal: 30,
+        ...style, // Include additional styles passed via the style prop
       }}
     >
-      {/* Text component for displaying the title with specified styles */}
-      <Text style={{ color: 'black', fontSize: 22, fontWeight: '900' }}>{title}</Text>
+      <Text style={{ color: 'black', fontSize: 22, fontWeight: 'bold' }}>{title}</Text>
     </TouchableOpacity>
   );
 }
 
-// Export the BackgroundButton component as the default export
 export default BackgroundButton;
