@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, ImageBackground, Text, TextInput, View } from 'react-native';
-import Label from './src/components/Label';
+import { TouchableOpacity, Text, ImageBackground, View } from 'react-native';
 
 function App(): JSX.Element {
   return (
@@ -8,16 +7,19 @@ function App(): JSX.Element {
       source={require('./src/Background.png')}
       style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
     >
-      <View style={{ alignItems: 'center', flex: 1, justifyContent: 'flex-end', marginBottom: 30 }}>
-        <Text style={{ fontSize: 40, color: 'red' }}>Hello World</Text>
-        <Text style={{ marginBottom: 10 }}>React-Native</Text>
-        <Button title='Click me' />
-
-        <Label>Welcome!</Label>
-
-        <TextInput style={{ backgroundColor: '#aaa', color: '#000', width: 200 }} />
-        <Button title="Let's Get Started" onPress={() => alert("Let's get started!")} />
-      </View>
+      <TouchableOpacity
+        onPress={() => alert("Let's get started!")}
+        style={{
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#FA7E52', // Set the background color of the button
+          borderRadius: 100, // Set the border radius of the button
+          paddingVertical: 15,
+          paddingHorizontal: 30,
+        }}
+      >
+        <Text style={{ color: 'white', fontSize: 18 }}>Let's Get Started</Text>
+      </TouchableOpacity>
     </ImageBackground>
   );
 }
