@@ -20,7 +20,7 @@ function BackgroundButton({ onPress, title, style }: BackgroundButtonProps): JSX
         borderRadius: 100,
         paddingVertical: 15,
         paddingHorizontal: 30,
-        ...style, // Include additional styles passed via the style prop
+        marginTop: 80
       }}
     >
       <Text style={{ color: 'black', fontSize: 22, fontWeight: 'bold' }}>{title}</Text>

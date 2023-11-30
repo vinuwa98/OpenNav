@@ -36,13 +36,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: 350,
-    height: 400,
-    marginBottom: 10,
-    marginTop: 90
+    width: 330,
+    height: 330,
+    marginTop: 200
   },
   button: {
-    marginTop: 70,
+    marginTop: 50,
     // Add any additional styling for the button here
   },
 });

@@ -18,8 +18,8 @@ function UndrawImage({ image, style }: UndrawImageProps): JSX.Element {
 
 const defaultStyles = {
   image: {
-    width: 200,
-    height: 150,
+    width: 150,
+    height: 100,
     marginBottom: 20,
   },
 };
